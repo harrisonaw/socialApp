@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="landing2">
+        <v-app style="background: #868E96;">
+
+            <template>
+
+                <!-- Nav Bar -->
+
+                <v-toolbar dense light color="#24A2B7">
+
+                    <v-container>
+                        <v-img max-height=200 max-width=300 src="logotext.png">
+                        </v-img>
+                    </v-container>
+
+                    <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
+                    <v-spacer class="hidden-md-and-up"></v-spacer>
+                    <v-toolbar-title>{{appTitle}}</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    
+                    
+                    <template>
+                        <v-row justify="center">
+                          <v-dialog v-model="dialog" persistent max-width="490">
+                            <template v-slot:activator="{ on }">
+                              <v-btn color="primary" dark v-on="on">Sign Up</v-btn>
+                            </template>
+                            <v-card>
+                                <div id="modal-signup" class="modal">
+                                    <div class="modal-content">
+                                      <h4>Sign up</h4>
+                                      <v-divider></v-divider>
+                                      <v-form id="signup-form">
+                                        <div class="input-field">
+                                          <input type="email" id="signup-email" required />
+                                          <v-label for="signup-email">Email address</v-label>
+                                        </div>
+                                        <div class="input-field">
+                                          <v-input type="password" id="signup-password" required />
+                                          <v-label for="signup-password">Choose password</v-label>
+                                        </div>
+                                        <v-btn class="btn yellow darken-2 z-depth-0">Sign up</v-btn>
+                                      </v-form>
+                                    </div>
+                                  </div>
+                            </v-card>
+                          </v-dialog>
+                        </v-row>
+                      </template>
+
+
+                    <v-spacer></v-spacer>
+                    <div class="my-2">
+                        <v-btn color="#FDC02F" dark>Join</v-btn>
+                    </div>
+                </v-toolbar>
+
+                <!-- End Nav Bar -->
+
+                <v-container grid-list-md>
+                    <v-card class="mx-auto" max-width="600" max-height="1200">
+                        <h1 class="text-center">Work with others and build community</h1>
+                    </v-card>
+                </v-container>
+
+
+                <!-- NEW CARD -->
+                <v-container grid-list-md>
+                    <v-card class="mx-auto" max-width="600" max-height="1200">
+                        <v-img src="transaction.png" height="500px"></v-img>
+
+                        <v-card-title>
+                            Crowdfunding for your neighbors cost of essentials!
+                        </v-card-title>
+
+                        <v-card-subtitle>
+                            A way of helping others with social distancing.
+                        </v-card-subtitle>
+
+                        <v-card-actions>
+                            <v-btn text>Share</v-btn>
+                            <!-- Need to add social media icons so people can share crowdfunding with their community -->
+                            <!-- This is going to be our quickest way to spread word -->
+                            <v-spacer></v-spacer>
+
+                            <v-btn icon @click="show = !show">
+                                <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                            </v-btn>
+                        </v-card-actions>
+
+                        <v-expand-transition>
+                            <div v-show="show">
+                                <v-divider></v-divider>
+
+                                <v-card-text>
+                                    During the unfortunate circumstance that we are given, Leverage sees a need for
+                                    crowdfunding. Crowdfunding is normally viewed as large numbers of people donating
+                                    small amounts of money to fund a business venture. We would like to add a twist to
+                                    that and point it towards helping your neighbor out. For example, someone in your
+                                    community needs help paying rent, groceries, or any other essential. You would be
+                                    able to help out by giving as little as $1.
+                                </v-card-text>
+                            </div>
+                        </v-expand-transition>
+                    </v-card>
+                </v-container>
+
+                <!-- NEW CARD -->
+
+                <v-container grid-list-md>
+                    <v-card class="mx-auto" max-width="600" max-height="1200">
+                        <v-img src="grocery.png" height="500px"></v-img>
+
+                        <v-card-title>
+                            Exchange skills for the people who need it!
+                        </v-card-title>
+
+                        <v-card-subtitle>
+                            A way of helping others with social distancing.
+                        </v-card-subtitle>
+
+                        <v-card-actions>
+                            <v-btn text>Share</v-btn>
+                            <!-- Need to add social media icons so people can share crowdfunding with their community -->
+                            <!-- This is going to be our quickest way to spread word -->
+                            <v-spacer></v-spacer>
+
+                            <v-btn icon @click="show = !show">
+                                <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                            </v-btn>
+                        </v-card-actions>
+
+                        <v-expand-transition>
+                            <div v-show="show">
+                                <v-divider></v-divider>
+
+                                <v-card-text>
+                                    During this time of social distancing, we need to work as a community. Leverage is a
+                                    place to find people in your community that may be more vulnerable to the
+                                    Coronavirus than others. Whether they are elderly or have a compromised immune
+                                    system, they will go on the app and request the essentials they need from a store.
+                                    You can then accept their request, and bring their groceries to their doorstep. It
+                                    will be up to the community to find needs for exchange.
+                                </v-card-text>
+                            </div>
+                        </v-expand-transition>
+                    </v-card>
+                </v-container>
+
+                <!--   aldkjfaldkjf a -->
+
+                
+
+
+            </template>
+
+
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script>
+        //Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAHjqOML_B-ZTYRvsATTVQog_oFFPD4uaE",
+        authDomain: "sircularity-f8c41.firebaseapp.com",
+        databaseURL: "https://sircularity-f8c41.firebaseio.com",
+        projectId: "sircularity-f8c41",
+        storageBucket: "sircularity-f8c41.appspot.com",
+        messagingSenderId: "938412003445",
+      };
+      firebase.initializeApp(config);
+  
+      // make auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+  
+      // update firestore settings
+      db.settings({ timestampsInSnapshots: true});
+    </script>
+    <script>
+        new Vue({
+            el: '#landing2',
+            vuetify: new Vuetify(),
+            data: {
+                show: false,
+                dialog: false,
+            }
+        })
+    </script>
+</body>
+
+</html>
